@@ -3,6 +3,8 @@ package com.cdac.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -34,7 +36,7 @@ public class QueryController {
 
 
 	@RequestMapping (value = "/submitquery", method = RequestMethod.POST)
-	public String save(@ModelAttribute("query") Query query)
+	public String save(@ModelAttribute("query") Query query, HttpSession session)
 	{
 		if(queryService.insert(query))
 		{
@@ -49,7 +51,6 @@ public class QueryController {
 	//@RequestMapping (value = "/submitquery", method = RequestMethod.GET)
 	public ModelAndView listQuery(ModelAndView model) throws IOException
 	{
-		System.out.println("controllllllllllllllllll");
 		List<Query> listQuery = queryService.selectAll();
 		System.out.println(listQuery.toString());
 		model.addObject("listQuery", listQuery);

@@ -38,6 +38,7 @@ public class LoginDaoImple implements LoginDao{
 				//log.setUserRole(userRole);(UserRole.valueOf(rs.getString("user_role")));
 				log.setUserRole(rs.getString("user_role"));
 				System.out.println(log.toString());
+				
 				return log;
 			
 			

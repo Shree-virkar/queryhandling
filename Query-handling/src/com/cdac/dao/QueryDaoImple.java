@@ -27,9 +27,13 @@ public class QueryDaoImple implements QueryDao{
 			query.getSubject(),
 			query.getQuery()
 		});
-		
-		return true;
+		System.out.println("insert"+i);
+		if(i==1) {
+			return true;
+		}else {
+			return false;
 
+		}
 	}
 
 	@Override
@@ -59,6 +63,7 @@ public class QueryDaoImple implements QueryDao{
 		System.out.println("fffffffffffffffffffffff");
 
 		return qlist;
+		
 	}
 	
 	
