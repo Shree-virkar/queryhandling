@@ -124,6 +124,14 @@
 
 </style>
 
+<script>
+	function display(){
+		document.getElementById(list).style.visibility="visible";
+		}
+
+</script>
+
+
     </head>
 
 
@@ -168,27 +176,32 @@
         
 		<div class="col-md-9">
             <div class="profile-content">
+            <form action="submitquery" method="get">
                <p><h2>Technical query submitted successfully.</h2></p>
             
                 <br>
                 <p align = "center">Details</p>
-                <table style="width:100% " border="1">
+                <table  width="100%" border="1" id="list;">
                     <tr>
                       <th>Tech_id</th>
+                      <th>Subject</th>
                       <th>Query</th>
-                      <th>Status</th>
                     </tr>
-                    <tr>
-                      <td>1</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
+                    <c:forEach var="query" items="${listQuery}" varStatus="status">
+                <tr>
+   
+                    <td>${query.q_id }
+                    <td>${query.subject}</td>
+                    <td>${query.query}</td>
+                
+                             
+                </tr>
+                </c:forEach>       
+                    
+                    
                   </table>
+                  <input type="submit" value="List" align="middle">
+                  </form>
                   <div >
                    Insert another <a href="home.jsp">query?</a>
                   </div>

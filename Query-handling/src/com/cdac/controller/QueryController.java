@@ -48,9 +48,10 @@ public class QueryController {
 		}	
 	}
 	
-	//@RequestMapping (value = "/submitquery", method = RequestMethod.GET)
+	@RequestMapping (value = "/submitquery", method = RequestMethod.GET)
 	public ModelAndView listQuery(ModelAndView model) throws IOException
 	{
+		System.out.println("in controller");
 		List<Query> listQuery = queryService.selectAll();
 		System.out.println(listQuery.toString());
 		model.addObject("listQuery", listQuery);

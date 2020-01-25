@@ -4,7 +4,6 @@ public class Login {
 
 	private String userName;
 	private String passWord;
-//	private UserRole userRole;
 	private String userRole;
 	
 	public Login() {
@@ -34,20 +33,5 @@ public class Login {
 		return "Login [userName=" + userName + ", passWord=" + passWord + ", userRole=" + userRole + "]";
 	}
 	
-	
-	
-	/*
-	public UserRole getUserRole() {
-		return userRole;
-	}
-	public void setUserRole(UserRole userRole) {
-		this.userRole = userRole;
-	}
-	@Override
-	public String toString() {
-		return "Login [userName=" + userName + ", passWord=" + passWord + ", userRole=" + userRole + "]";
-	}
-	*/
-	
-	
+
 }

@@ -173,7 +173,7 @@
                <p><h2>Technical Queries</h2></p>
             
               <br>
-
+				 <form class = "form-container" action="searchquery" method="post">
               <p align = "left">
                   
                 <b>Subject :-</b> 
@@ -185,6 +185,17 @@
                     <option>DataStructures</option>
                 </select>
               </p>
+              
+               
+              
+              <p>
+              		Enter topic :<input type="text">
+              </p>
+              
+              <p>
+              		<input type="submit" class="btn btn-info" value = "search related topic" align="middle" name = "btn1">
+              </p>
+              </form>
 
               <br>
 
@@ -194,7 +205,7 @@
                   <textarea class="form-control" rows="8" id="comment" name="query"></textarea>
               </p>
 
-              <input type="submit" class="btn btn-info" value="Submit"></button>
+              <input type="submit" class="btn btn-info" value="Submit" name = "btn2"></button>
             </div>
 
         </div>

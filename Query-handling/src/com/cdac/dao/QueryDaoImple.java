@@ -27,7 +27,7 @@ public class QueryDaoImple implements QueryDao{
 			query.getSubject(),
 			query.getQuery()
 		});
-		System.out.println("insert"+i);
+		
 		if(i==1) {
 			return true;
 		}else {
@@ -40,7 +40,7 @@ public class QueryDaoImple implements QueryDao{
 	public List<Query> selectAll() {
 		
 		String sql = "select techq_id, subject,tech_quest from tech_queries";
-		
+		System.out.println("listttttttt");
 		List<Query> qlist = jdbcTemplate.query(sql, new RowMapper<Query>() {
 
 			@Override
