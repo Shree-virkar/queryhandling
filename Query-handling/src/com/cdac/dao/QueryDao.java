@@ -8,6 +8,13 @@ public interface QueryDao {
 	
 	boolean insert(Query query);
 	
-	List<Query> selectAll();
+	public List<Query> selectAll(Query query);
+	
+	public List<Query> selectAns(Query query);
+
+	public List<Query> selectPrev(Query query);
+ 
+	
+	
 
 }

@@ -173,30 +173,20 @@
                <p><h2>Technical Queries</h2></p>
             
               <br>
-				 <form class = "form-container" action="searchquery" method="post">
+				 
               <p align = "left">
-                  
-                <b>Subject :-</b> 
-
-                <select name="subject">
+                           <b>Subject :-</b> 
+        <select name="subject">
                     <option>Java</option>
                     <option>CPP</option>
                     <option>DotNet</option>
                     <option>DataStructures</option>
                 </select>
               </p>
-              
-               
-              
-              <p>
-              		Enter topic :<input type="text">
+        	   <p>
+              		Enter topic :<input type="text"  name="topic">
               </p>
               
-              <p>
-              		<input type="submit" class="btn btn-info" value = "search related topic" align="middle" name = "btn1">
-              </p>
-              </form>
-
               <br>
 
               <p align = "left">
@@ -210,7 +200,24 @@
 
         </div>
         </form>
-    
+        <form class = "form-container" action="searchquery" method="post">
+        
+         <b>Subject :-</b> 
+        <select name="subject">
+                    <option>Java</option>
+                    <option>CPP</option>
+                    <option>DotNet</option>
+                    <option>DataStructures</option>
+                </select>
+              </p>
+        	   <p>
+              		Enter topic :<input type="text"  name="topic">
+              </p>
+              
+              <p>
+              		<input type="submit" class="btn btn-info" value = "search related topic" align="middle" name = "btn1">
+              </p>
+    	</form>
 	</div>
 </div>
 

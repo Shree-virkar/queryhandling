@@ -116,7 +116,7 @@
 		  .profile-content {
 		    padding: 20px;
 		    background: #fff;
-		    min-height: 460px;
+		    min-height: 520px;
 		    
 		  }
 
@@ -190,7 +190,7 @@
                     <c:forEach var="query" items="${listQuery}" varStatus="status">
                 <tr>
    
-                    <td>${query.q_id }
+                    <td>${query.q_id }</td>
                     <td>${query.subject}</td>
                     <td>${query.query}</td>
                 

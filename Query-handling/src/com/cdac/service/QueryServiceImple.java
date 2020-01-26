@@ -21,10 +21,29 @@ public class QueryServiceImple implements QueryService{
 	}
 
 	@Override
-	public List<Query> selectAll() {
-	
-		return queryDao.selectAll();
+	public List<Query> selectAll(Query query) {
+		
+		return queryDao.selectAll(query);
 	}
+
+	@Override
+	public List<Query> selectAns(Query query) {
+		// TODO Auto-generated method stub
+		return queryDao.selectAns(query);
+	}
+
+	@Override
+	public List<Query> selectPrev(Query query) {
+		// TODO Auto-generated method stub
+		return queryDao.selectPrev(query);
+	}
+
+
+
+
+	
+	
+	
 	
 	
 }

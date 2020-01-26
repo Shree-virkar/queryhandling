@@ -1,10 +1,14 @@
 package com.cdac.model;
 
 public class Login {
-
+	
+	 
 	private String userName;
 	private String passWord;
 	private String userRole;
+	private String emailId;
+	private int phone;
+	
 	
 	public Login() {
 		super();
@@ -31,6 +35,18 @@ public class Login {
 	@Override
 	public String toString() {
 		return "Login [userName=" + userName + ", passWord=" + passWord + ", userRole=" + userRole + "]";
+	}
+	public String getEmailId() {
+		return emailId;
+	}
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	public int getPhone() {
+		return phone;
+	}
+	public void setPhone(int phone) {
+		this.phone = phone;
 	}
 	
 

@@ -28,7 +28,9 @@ public class LoginController{
 		this.loginService = loginService;
 	}
 
-
+	
+	
+	
 
 	@RequestMapping(value = "/student", method = RequestMethod.POST)
 	public ModelAndView userLogin(@RequestParam("userName") String userName, @RequestParam("passWord") String passWord, @RequestParam("userRole") String userRole, HttpSession session)

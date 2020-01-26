@@ -116,7 +116,7 @@
 		  .profile-content {
 		    padding: 20px;
 		    background: #fff;
-		    min-height: 460px;
+		    min-height: 520px;
 		    text-align: center;
 		  }
 </style>
@@ -177,7 +177,7 @@
 				  
 				</tr>
 				<tr height = "100" style="text-align: center;">
-					<td><a href="">List previous Technical queries</td>
+					<td><a href="prevtech.jsp">List previous Technical queries</td>
 						<td><a href="">List previous Non-Technical queries</td>
 				  
 				</tr>
