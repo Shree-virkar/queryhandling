@@ -14,6 +14,7 @@ public interface QueryService {
 
 	public List<Query> selectPrev(Query query);
 
+	public List<Query> selectSubAns(Query query);
 
 
 }

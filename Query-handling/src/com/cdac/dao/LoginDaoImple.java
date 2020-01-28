@@ -24,13 +24,13 @@ public class LoginDaoImple implements LoginDao{
 	public Login userLogin(Login user) {
 		
 		
-		String sql = "select * from user where Username = ? and Password = ? and user_role = ?";
+		String sql = "select * from user where Username = ? and Password = ?";
 		try {
-		Login log1 = jdbcTemplate.queryForObject(sql, new Object[] {user.getUserName(),  user.getPassWord(), user.getUserRole()} ,new RowMapper<Login>() {
+		Login log1 = jdbcTemplate.queryForObject(sql, new Object[] {user.getUserName(),  user.getPassWord()} ,new RowMapper<Login>() {
 			
 			@Override
 			public Login mapRow(ResultSet rs, int rowNum) throws SQLException {
-				System.out.println(user.getUserRole().toString());
+				//System.out.println(user.getUserRole().toString());
 				
 				Login log = new Login();
 				log.setUserName(rs.getString("Username"));

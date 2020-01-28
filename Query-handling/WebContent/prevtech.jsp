@@ -172,8 +172,11 @@
                <p align = "center"><h2>Click on the below subject to load previous technical queries</h2></p>
             
               <br>
-			<form action="prevtech" method="post">
-            	<input type="submit" value="Cpp" name="subject">
+              
+              	<form action="prevtech" method="post">
+			
+            	<input type="submit" value="cpp" name="subject">
+            	
             </form>	
             			<form action="prevtech" method="post">
             
@@ -201,7 +204,7 @@
 				</form>
 							<form action="prevtech" method="post">
 				
-				<input type="submit" value="Ms .net" name="subject">
+				<input type="submit" value="Ms.net" name="subject">
 				</form>
 							<form action="prevtech" method="post">
 				

@@ -167,7 +167,7 @@
 				<!-- END MENU -->
 			</div>
         </div>
-        <form class = "form-container" action="submitquery" method="post">
+        <form class = "form-container" action="submitquery1" method="post">
 		<div class="col-md-9">
             <div class="profile-content">
                <p><h2>Technical Queries</h2></p>
@@ -200,7 +200,7 @@
 
         </div>
         </form>
-        <form class = "form-container" action="searchquery" method="post">
+        <form class = "form-container" action="searchquery1" method="post">
         
          <b>Subject :-</b> 
         <select name="subject">

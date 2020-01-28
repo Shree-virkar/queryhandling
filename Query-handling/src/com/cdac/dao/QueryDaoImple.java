@@ -11,16 +11,18 @@ import org.springframework.stereotype.Repository;
 
 import com.cdac.model.Query;
 
+
 @Repository
 public class QueryDaoImple implements QueryDao{
 
+	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
 	@Override
-	public boolean insert(Query query) {
-		String sql = "insert into question values(?,?,?,?)";
-		int id=100;
+	public boolean insert(Query query) { 
+		String sql = "insert into question values(?,?,?,?)"; 
+		int id=103;
 		
 		int i = jdbcTemplate.update(sql, new Object[] {
 			id,
@@ -94,8 +96,51 @@ public class QueryDaoImple implements QueryDao{
 
 	@Override
 	public List<Query> selectPrev(Query query) {
-		// TODO Auto-generated method stub
-		return null;
+String sql1="select * from question where subject=?";
+		
+		List<Query> qlist = jdbcTemplate.query(sql1,new Object[] {query.getSubject()}, new RowMapper<Query>() {
+
+			@Override
+			public Query mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				Query que = new Query();
+				
+			//	que.setQuery(rs.getString("question"));
+				que.setQ_id(rs.getInt("q_id"));
+				que.setQuery(rs.getString("question"));
+				return que;
+				
+			}
+
+			
+		});
+		return qlist;
+	}
+
+
+	@Override
+	public List<Query> selectSubAns(Query query) {
+		String sql1="select * from que_ans where q_id=?";
+		
+		List<Query> qlist = jdbcTemplate.query(sql1,new Object[] {query.getQ_id()}, new RowMapper<Query>() {
+
+			@Override
+			public Query mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				Query que = new Query();
+				
+			//	que.setQuery(rs.getString("question"));
+				que.setQ_id(rs.getInt("q_id"));
+				que.setAns(rs.getString("answer"));
+				return que;
+				
+			}
+
+			
+		});
+		return qlist;
+
+		
 	}
 
 

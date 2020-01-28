@@ -14,7 +14,8 @@ public interface QueryDao {
 
 	public List<Query> selectPrev(Query query);
  
-	
+	public List<Query> selectSubAns(Query query);
+
 	
 
 }

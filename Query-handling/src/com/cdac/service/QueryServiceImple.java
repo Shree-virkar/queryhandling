@@ -38,6 +38,12 @@ public class QueryServiceImple implements QueryService{
 		return queryDao.selectPrev(query);
 	}
 
+	@Override
+	public List<Query> selectSubAns(Query query) {
+		// TODO Auto-generated method stub
+		return queryDao.selectSubAns(query);
+	}
+
 
 
 

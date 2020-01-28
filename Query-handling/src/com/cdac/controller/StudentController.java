@@ -17,6 +17,7 @@ import com.cdac.model.Query;
 import com.cdac.service.QueryService;
 
 @Controller
+//@RequestMapping(value="/student")
 public class StudentController {
 	
 	@Autowired
@@ -36,7 +37,7 @@ public class StudentController {
 
 
 
-	@RequestMapping (value = "/submitquery", method = RequestMethod.POST)
+	@RequestMapping (value = "/submitquery1", method = RequestMethod.POST)
 	public String save(@RequestParam("query") String query, @RequestParam("subject") String subject,@RequestParam("topic") String topic, HttpSession session)
 	{
 		Query que=new Query();
@@ -55,7 +56,7 @@ public class StudentController {
 	}
 	
 	
-	@RequestMapping (value = "/searchquery", method = RequestMethod.POST)
+	@RequestMapping (value = "/searchquery1", method = RequestMethod.POST)
 	public ModelAndView listQuery(ModelAndView model, @RequestParam("subject") String subject, @RequestParam("topic") String topic) throws IOException
 	{
 		Query query=new Query();
@@ -78,7 +79,7 @@ public class StudentController {
 	{
 		Query query=new Query();
 		query.setQ_id(q_id);
-		query.setQuery(question);;
+		query.setQuery(question);
 		
 		System.out.println(query.getQ_id()+"++++++++++++++++++++");
 		List<Query> listQuery = queryService.selectAns(query);
@@ -91,17 +92,43 @@ public class StudentController {
 		
 	} 
 	
-	/*@RequestMapping (value = "/answers", method = RequestMethod.POST)
+	@RequestMapping (value = "/prevtech", method = RequestMethod.POST)
 
-	public ModelAndView listAns(ModelAndView model, @RequestParam("subject") int q_id) throws IOException{
+	public ModelAndView listAns(ModelAndView model, @RequestParam("subject") String subject) throws IOException{
 		
+		Query query=new Query();
+		query.setSubject(subject);
 		
+		List<Query> listQuery = queryService.selectPrev(query);
+		model.addObject("listQuery", listQuery);
 		
+		model.setViewName("searchsub");
 		
 		return model;
 		
 		
-	}*/
+	
+		
+		
+	}
+	
+	@RequestMapping (value = "/answers2", method = RequestMethod.POST)
+	public ModelAndView listAns1(ModelAndView model, @RequestParam("q_id") int q_id, @RequestParam("question") String question) throws IOException
+	{
+		Query query=new Query();
+		query.setQ_id(q_id);
+		query.setQuery(question);
+		
+		System.out.println(query.getQ_id()+"++++++++++++++++++++");
+		List<Query> listQuery = queryService.selectSubAns(query);
+		model.addObject("listQuery", listQuery);
+		model.addObject(query);
+		
+		model.setViewName("answer");
+		
+		return model;
+		
+	} 
 	
 	
 	

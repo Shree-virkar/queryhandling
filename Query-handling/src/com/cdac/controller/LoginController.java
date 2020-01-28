@@ -33,13 +33,13 @@ public class LoginController{
 	
 
 	@RequestMapping(value = "/student", method = RequestMethod.POST)
-	public ModelAndView userLogin(@RequestParam("userName") String userName, @RequestParam("passWord") String passWord, @RequestParam("userRole") String userRole, HttpSession session)
+	public ModelAndView userLogin(@RequestParam("userName") String userName, @RequestParam("passWord") String passWord, HttpSession session)
 	{
 		ModelAndView mv = new ModelAndView();
 		Login log = new Login();
 		log.setUserName(userName);
 		log.setPassWord(passWord);
-		log.setUserRole(userRole);
+		//log.setUserRole(userRole);
 		
 		Login log1= loginService.userLogin(log);	
 		
@@ -47,19 +47,21 @@ public class LoginController{
 		if(log1.getUserRole().equals("student"))
 		{
 			mv.setViewName("home");
-			addUserInSession(log1, session);
+			addUserInSession(log, session);
 		}
 		
 		else if(log1.getUserRole().equals("admin"))
 		{
 			mv.setViewName("admin");
-			addUserInSession(log1, session);
+			
+			addUserInSession(log, session);
 			
 		}else  if(log1.getUserRole().equals("faculty"))
 		
 		{	
 			mv.setViewName("faculty");
-			addUserInSession(log1, session);
+			addUserInSession(log, session);
+			System.out.println(session);
 			
 		}else
 		{

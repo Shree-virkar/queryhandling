@@ -58,9 +58,9 @@
                                     </div> 
                                      <div class="form-group">
                                      
-                                     	<input type="radio" name="userRole" value="admin" checked> ADMIN
+                                     <!--	<input type="radio" name="userRole" value="admin" checked> ADMIN
   										<input type="radio" name=userRole value="student"> STUDENT
- 										 <input type="radio" name="userRole" value="faculty"> FACULTY  
+ 										 <input type="radio" name="userRole" value="faculty"> FACULTY  -->
                                      
                                      	<!-- <input type="checkbox" name="userRole" value="admin">ADMIN
                                      	<input type="checkbox" name="userRole" value="student">STUDENT
