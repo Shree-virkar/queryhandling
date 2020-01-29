@@ -173,47 +173,29 @@
             
               <br>
               
-              	<form action="prevtech" method="post">
-			
-            	<input type="submit" value="cpp" name="subject">
+              	<form action="anstech" method="post">
+						
+            	        <input type="submit" value="cpp" name="subject">
             	
             </form>	
-            			<form action="prevtech" method="post">
+            			<form action="anstech" method="post">
             
-			   <input type="submit" value="DataStructure" name="subject">  
-				        </form>
-							<form action="prevtech" method="post">
+				<input type="submit" value="DataStructure" name="subject">  
+				</form>
+							<form action="anstech" method="post">
 				
 				<input type="submit" value="Database" name="subject">
-				        </form>
-							<form action="prevtech" method="post">
+				</form>
+							<form action="anstech" method="post">
 				
 				<input type="submit" value="AWEP" name="subject">
-				        </form>
-							<form action="prevtech" method="post">
+				</form>
+							<form action="anstech" method="post">
 				
 				<input type="submit" value="MEAN" name="subject">
-				</form>
-							<form action="prevtech" method="post">
 				
-				<input type="submit" value="Java" name="subject">
 				</form>
-							<form action="prevtech" method="post">
-				
-				<input type="submit" value="Adv Java" name="subject">
-				</form>
-							<form action="prevtech" method="post">
-				
-				<input type="submit" value="Ms.net" name="subject">
-				</form>
-							<form action="prevtech" method="post">
-				
-				<input type="submit" value="ASDM" name="subject">
-				</form>
-							<form action="prevtech" method="post">
-				
-				<input type="submit" value="O.S" name="subject"> 
-				</form>         	
+				       	
                     
             </div>
 

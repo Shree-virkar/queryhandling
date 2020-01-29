@@ -13,15 +13,15 @@
 	<table align="center">
 		
 		<tr>
-			<td>${query.q_id}</td>
-                    <td>${query.query}</td>
+			<td>${techQuery.q_id}</td>
+                    <td>${techQuery.query}</td>
 		</tr>
 		
 	  <c:forEach var="query" items="${listQuery}" varStatus="status">
                 <tr>
    
                     
-                    <td>${query.ans}</td>
+                    <td>${query.techResponse}</td>
                 
                              
                 </tr>

@@ -107,7 +107,7 @@ public class StudentDaoImple implements StudentDao{
 		});	
 		
 		
-		String sql5="insert into tech_answers(tech_id) values(?); ";
+	/*	String sql5="insert into tech_answers(tech_id) values(?); ";
 
 		int k = jdbcTemplate.update(sql5, new Object[] {
 				
@@ -115,9 +115,9 @@ public class StudentDaoImple implements StudentDao{
 				tq3.getQ_id()
 				
 			
-			});
+			}); */
 		
-		if(i==1 && k==1) {
+		if(i==1) {
 			return true;
 		}else {
 			return false;
@@ -160,7 +160,7 @@ public class StudentDaoImple implements StudentDao{
 	public List<TechQuery> selectAns(TechQuery techQuery) {
 		//String sql = "select question.question, que_ans.answer from question inner join que_ans on question.q_id = que_ans.q_id";
 		
-		String sql1="select * from que_ans where q_id=?";
+		String sql1="select * from tech_answers where tech_id=?";
 		
 		List<TechQuery> qlist = jdbcTemplate.query(sql1,new Object[] {techQuery.getQ_id()}, new RowMapper<TechQuery>() {
 
@@ -170,8 +170,9 @@ public class StudentDaoImple implements StudentDao{
 				TechQuery que = new TechQuery();
 				
 			//	que.setQuery(rs.getString("question"));
-				que.setQ_id(rs.getInt("q_id"));
-				que.setAns(rs.getString("answer"));
+				que.setQ_id(rs.getInt("tech_id"));
+				que.setTechResponse(rs.getString("response"));
+			
 				return que;
 				
 			}
@@ -228,7 +229,7 @@ public class StudentDaoImple implements StudentDao{
 
 	@Override
 	public List<TechQuery> selectSubAns(TechQuery techQuery) {
-		String sql1="select * from que_ans where q_id=?";
+		String sql1="select * from tech_answers where tech_id=?";
 		
 		List<TechQuery> qlist = jdbcTemplate.query(sql1,new Object[] {techQuery.getQ_id()}, new RowMapper<TechQuery>() {
 
@@ -238,8 +239,8 @@ public class StudentDaoImple implements StudentDao{
 				TechQuery que = new TechQuery();
 				
 			//	que.setQuery(rs.getString("question"));
-				que.setQ_id(rs.getInt("q_id"));
-				que.setAns(rs.getString("answer"));
+				que.setQ_id(rs.getInt("tech_id"));
+				que.setTechResponse(rs.getString("response"));
 				return que;
 				
 			}

@@ -25,8 +25,8 @@ public interface StudentDao {
 
 	public List<TechQuery> selectSubAns(TechQuery techQuery);
 
-
-
+	
+	
 	
 
 }

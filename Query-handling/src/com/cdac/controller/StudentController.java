@@ -38,9 +38,11 @@ public class StudentController {
 	}
 
 	@RequestMapping(value="/registerStudent", method = RequestMethod.POST)
-	public String registerStudentC(@RequestParam("username") String username, @RequestParam("password") String password,  @RequestParam("email") String email,@RequestParam("contactno") int contactno,@RequestParam("firstname") String firstname,@RequestParam("lastname") String lastname)
+	public String registerStudentC(@RequestParam("username") String username, @RequestParam("password") String password,  @RequestParam("email") String email,@RequestParam("contactno") int contactno,@RequestParam("firstname") String firstname,@RequestParam("lastname") String lastname,HttpSession session)
 	{
 	
+		int userId=(int) session.getAttribute("userId");
+		if(userId!=0) {
 		Login log=new Login();
 		log.setUserName(username);
 		log.setPassWord(password);
@@ -64,7 +66,11 @@ public class StudentController {
 			return "/login";
 		}
 		
-		return "/error";
+		return "/errorPage";
+		}else {
+			
+			return "/errorPage";
+		}
 	} 
 	
 	
@@ -144,6 +150,8 @@ public class StudentController {
 		
 		System.out.println(techQuery.getQ_id()+"++++++++++++++++++++");
 		List<TechQuery> listQuery = studentService.selectAns(techQuery);
+		System.out.println(listQuery.toString()+"+++++++++++");
+		
 		model.addObject("listQuery", listQuery);
 		model.addObject(techQuery);
 		

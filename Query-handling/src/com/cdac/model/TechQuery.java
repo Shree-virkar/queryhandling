@@ -12,12 +12,16 @@ public class TechQuery {
 	
 	private String query;
 	
+	private String techResponse;
+	
+	
+
 	@Override
 	public String toString() {
 		return "TechQuery [q_id=" + q_id + ", subject_id=" + subject_id + ", topic_id=" + topic_id + ", subject="
-				+ subject + ", query=" + query + ", topic=" + topic + ", ans=" + ans + "]";
+				+ subject + ", query=" + query + ", techResponse=" + techResponse + ", topic=" + topic + ", ans=" + ans
+				+ "]";
 	}
-
 
 	private String topic;
 	
@@ -93,6 +97,14 @@ public class TechQuery {
 
 	public void setTopic_id(int topic_id) {
 		this.topic_id = topic_id;
+	}
+
+	public String getTechResponse() {
+		return techResponse;
+	}
+
+	public void setTechResponse(String techResponse) {
+		this.techResponse = techResponse;
 	}
 
 }

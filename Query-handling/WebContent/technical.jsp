@@ -180,7 +180,7 @@
                     <option>java</option>
                     <option>CPP</option>
                     <option>DotNet</option>
-                    <option>DataStructures</option>
+                    <option>DataStructure</option>
                 </select>
               </p>
         	   <p>
@@ -207,7 +207,7 @@
                     <option>Java</option>
                     <option>CPP</option>
                     <option>DotNet</option>
-                    <option>DataStructures</option>
+                    <option>DataStructure</option>
                 </select>
               </p>
         	   <p>
