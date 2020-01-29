@@ -18,4 +18,10 @@ public class LoginServiceImple implements LoginService{
 		return loginDao.userLogin(user);
 	}
 
+	@Override
+	public Login getUserId(String userName, String password) {
+		// TODO Auto-generated method stub
+		return loginDao.getUserId(userName, password);
+	}
+
 }

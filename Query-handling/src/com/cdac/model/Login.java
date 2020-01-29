@@ -2,12 +2,12 @@ package com.cdac.model;
 
 public class Login {
 	
-	 
+	private int userId; 
 	private String userName;
 	private String passWord;
 	private String userRole;
 	private String emailId;
-	private int phone;
+	private int contactNo;
 	
 	
 	public Login() {
@@ -32,22 +32,31 @@ public class Login {
 	public void setUserRole(String userRole) {
 		this.userRole = userRole;
 	}
+
 	@Override
-	public String toString() {
-		return "Login [userName=" + userName + ", passWord=" + passWord + ", userRole=" + userRole + "]";
-	}
+public String toString() {
+	return "Login [userId=" + userId + ", userName=" + userName + ", passWord=" + passWord + ", userRole=" + userRole
+			+ ", emailId=" + emailId + ", contactNo=" + contactNo + "]";
+}
 	public String getEmailId() {
 		return emailId;
 	}
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-	public int getPhone() {
-		return phone;
+	public int getContactNo() {
+		return contactNo;
 	}
-	public void setPhone(int phone) {
-		this.phone = phone;
+	public void setContactNo(int contactNo) {
+		this.contactNo = contactNo;
 	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	
 	
 
 }

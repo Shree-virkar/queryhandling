@@ -72,38 +72,50 @@ h1{
                 <div class = "col-md-3"></div>
                 <div class = "col-md-6">
                     <h1 class = "text-center">REGISTER</h1>
-
-                    <label class = "label col-md-3 control-label">ID</label>
+				<form action="registerStudent" method="post">
+                    <label class = "label col-md-3 control-label">username</label>
                     <div class = "col-md-9">
-                        <input type = "text" class = "form-control" name="id" placeholder = "Enter ID">
+                        <input type = "text" class = "form-control" name="username" placeholder = "Enter username">
                     </div>
 
-                    <label class = "label col-md-3 control-label">NAME</label>
+                    <label class = "label col-md-3 control-label">First NAME</label>
                     <div class = "col-md-9">
-                        <input type = "text" class = "form-control" name="name" placeholder = "Enter name">
+                        <input type = "text" class = "form-control" name="firstname" placeholder = "Enter firstname">
                     </div>
 
+					
+					  <label class = "label col-md-3 control-label">last NAME</label>
+                    <div class = "col-md-9">
+                        <input type = "text" class = "form-control" name="lastname" placeholder = "Enter lastname">
+                    </div>
+					
                     <label class = "label col-md-3 control-label">EMAIL</label>
                     <div class = "col-md-9">
                         <input type = "text" class = "form-control" name="email" placeholder = "Enter email">
                     </div>
 
+					<label class = "label col-md-3 control-label">contact</label>
+                    <div class = "col-md-9">
+                        <input type = "text" class = "form-control" name="contactno" placeholder = "Enter contact number">
+                    </div>
+					
+
 					<label class = "label col-md-3 control-label">PASSWORD</label>
                     <div class = "col-md-9">
-                        <input type = "Password" class = "form-control" name="passWord" placeholder = "password">
+                        <input type = "Password" class = "form-control" name="password" placeholder = "password">
                       
                     </div>
-
-                    <label class = "label col-md-3 control-label">MOBILE</label>
-                    <div class = "col-md-9">
-                        <input type = "text" class = "form-control" name="mobNo" placeholder = "Enter mobile number">
+			
+					 <div class = "col-md-9">
+                                    <input type="submit" class="btn btn-primary btn-block" name="Register" value="register">
+                      
                     </div>
-
+			
                     
+         
 
-                    <a href ="#" >
-                        <div class = "btn btn-info">SUBMIT</div>
-                    </a>
+
+                   </form> 
                 </div>
                 <div class = "col-md-3"></div>
             </div>

@@ -6,4 +6,6 @@ public interface LoginDao{
 
 	Login userLogin(Login user);
 	
+	Login getUserId(String userName,String password);
+	
 }

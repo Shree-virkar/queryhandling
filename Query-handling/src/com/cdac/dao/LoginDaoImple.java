@@ -24,7 +24,7 @@ public class LoginDaoImple implements LoginDao{
 	public Login userLogin(Login user) {
 		
 		
-		String sql = "select * from user where Username = ? and Password = ?";
+		String sql = "select * from users where userName = ? and password = ?";
 		try {
 		Login log1 = jdbcTemplate.queryForObject(sql, new Object[] {user.getUserName(),  user.getPassWord()} ,new RowMapper<Login>() {
 			
@@ -33,10 +33,10 @@ public class LoginDaoImple implements LoginDao{
 				//System.out.println(user.getUserRole().toString());
 				
 				Login log = new Login();
-				log.setUserName(rs.getString("Username"));
-				log.setPassWord(rs.getString("Password"));
+				log.setUserName(rs.getString("userName"));
+				log.setPassWord(rs.getString("password"));
 				//log.setUserRole(userRole);(UserRole.valueOf(rs.getString("user_role")));
-				log.setUserRole(rs.getString("user_role"));
+				log.setUserRole(rs.getString("userRole"));
 				System.out.println(log.toString());
 				
 				return log;
@@ -55,6 +55,32 @@ public class LoginDaoImple implements LoginDao{
 			
 		
 	
+	}
+
+	@Override
+	public Login getUserId(String userName, String password) {
+		
+		String sql="select user_id from users where userName=? and password=?";
+		
+		
+			Login log1 = jdbcTemplate.queryForObject(sql, new Object[] {userName,password} ,new RowMapper<Login>() {
+				
+				@Override
+				public Login mapRow(ResultSet rs, int rowNum) throws SQLException {
+					//System.out.println(user.getUserRole().toString());
+					
+					Login log = new Login();
+					log.setUserId(rs.getInt("user_id"));					
+					return log;
+				
+				
+				}
+				
+			});
+			
+			return log1;
+		
+		
 	}
 		
 

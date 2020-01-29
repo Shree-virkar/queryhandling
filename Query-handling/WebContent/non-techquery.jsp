@@ -188,10 +188,10 @@
 
               <p align = "left">
                   <b>Enter your query :-</b>
-                  <form name="myForm" onsubmit="return validateForm()" method="post">
+                  <form action="nontech" name="myForm" onsubmit="return validateForm()" method="post">
 				
 
-                  <textarea class="form-control" rows="10" id="comment" name = "fname"></textarea>
+                  <textarea class="form-control" rows="10" id="comment" name ="fname"></textarea>
                    <input type="submit" value="Submit">
               </p>
               <!--  <button onclick="myFunction()"  type="button" class="btn btn-info">Submit</button>-->

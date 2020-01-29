@@ -177,7 +177,7 @@
               <p align = "left">
                            <b>Subject :-</b> 
         <select name="subject">
-                    <option>Java</option>
+                    <option>java</option>
                     <option>CPP</option>
                     <option>DotNet</option>
                     <option>DataStructures</option>

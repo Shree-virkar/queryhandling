@@ -1,24 +1,32 @@
 package com.cdac.model;
 
-public class Query {
+public class TechQuery {
 	
 	private int q_id;
+	
+	private int subject_id;
+	
+	private int topic_id;
 	
 	private String subject;
 	
 	private String query;
 	
+	@Override
+	public String toString() {
+		return "TechQuery [q_id=" + q_id + ", subject_id=" + subject_id + ", topic_id=" + topic_id + ", subject="
+				+ subject + ", query=" + query + ", topic=" + topic + ", ans=" + ans + "]";
+	}
+
+
 	private String topic;
 	
 	private String ans;
 	
-	@Override
-	public String toString() {
-		return "Query [q_id=" + q_id + ", subject=" + subject + ", query=" + query + "]";
-	}
+	
 
 	
-	public Query() {
+	public TechQuery() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -65,6 +73,26 @@ public class Query {
 
 	public void setAns(String ans) {
 		this.ans = ans;
+	}
+
+
+	public int getSubject_id() {
+		return subject_id;
+	}
+
+
+	public void setSubject_id(int subject_id) {
+		this.subject_id = subject_id;
+	}
+
+
+	public int getTopic_id() {
+		return topic_id;
+	}
+
+
+	public void setTopic_id(int topic_id) {
+		this.topic_id = topic_id;
 	}
 
 }
