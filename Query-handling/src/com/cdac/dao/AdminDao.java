@@ -6,11 +6,12 @@ import com.cdac.model.Faculty;
 import com.cdac.model.Login;
 import com.cdac.model.NonTechQuery;
 import com.cdac.model.Student;
+import com.cdac.model.TechQuery;
 
 public interface AdminDao {
 
 	
-	boolean registerFaculty(Login log, Faculty fc );
+	boolean registerFaculty(Login log, Faculty fc,TechQuery sub );
 	
 	ArrayList<NonTechQuery> getQueries();
 	

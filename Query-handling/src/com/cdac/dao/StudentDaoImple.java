@@ -43,7 +43,7 @@ public class StudentDaoImple implements StudentDao{
 				
 				que.setSubject_id(rs.getInt("subject_id"));
 				
-				//System.out.println(que.getQuery().toString()+"+++++++++++");
+				
 				return que;
 				
 			}
@@ -257,12 +257,12 @@ public class StudentDaoImple implements StudentDao{
 	@Override
 	public boolean registerStudent(Login log, Student std) {
 		
-			String sql="insert into users(userName,password,contact,email,userRole) values(?,?,?,?,?)";
+			String sql="insert into users(userName,password,contact,email,userRole) values(?,aes_encrypt(?, 'mypassword'),?,?,?)";
 			
 			int i=jdbcTemplate.update(sql,new Object[] {log.getUserName(),log.getPassWord(),log.getContactNo(),log.getEmailId(),log.getUserRole()});
 			
 			
-			String sql2="select user_id from users where userName=? and password=?";
+			String sql2="select user_id from users where userName=? and aes_decrypt(password,'mypassword')=?";
 			
 			Login log1 = jdbcTemplate.queryForObject(sql2, new Object[] {log.getUserName(),  log.getPassWord()} ,new RowMapper<Login>() {
 				
@@ -354,52 +354,6 @@ public class StudentDaoImple implements StudentDao{
 
 	
 
-
-	/*@Override
-	public List<Query> selectAns(Query query) {
-		String sql = "select question.question, que_ans.answer from question inner join que_ans on question.q_id = que_ans.q_id;";
-		
-		List<Query> qlist = jdbcTemplate.query(sql,new Object[] {query.getQ_id()}, new RowMapper<Query>() {
-
-			@Override
-			public Query mapRow(ResultSet rs, int rowNum) throws SQLException {
-				
-				Query que = new Query();
-				
-				que.setQuery(rs.getString("question"));
-				que.setQ_id(rs.getInt("q_id"));
-				return que;
-				
-			}
-
-			
-		});
-		return qlist;
-	} */
-
-	
-
-	
-
-	
-/*	@Override
-	public boolean insert(Query query) {
-		
-		String sql = "insert into tech_queries(subject,tech_quest) values(?,?)";
-		
-		int i = jdbcTemplate.update(sql, new Object[] {
-			
-			query.getSubject(),
-			query.getQuery()
-		});
-		
-		if(i==1) {
-			return true;
-		}else {
-			return false;
-
-		}
-	} */
 
 
 

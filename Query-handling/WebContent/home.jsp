@@ -137,7 +137,7 @@ body {
 				<!-- SIDEBAR USER TITLE -->
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
-						Student Name
+						Welcome <%= session.getAttribute("username") %>
 					</div>
 					<div class="profile-usertitle-job">
 						PG-DAC
@@ -150,11 +150,7 @@ body {
 				<!-- SIDEBAR MENU -->
 				<div class="profile-usermenu">
 					<ul class="nav">
-						<li class="active">
-							<a href="#">
-							<i class="glyphicon glyphicon-home"></i>
-							Update Profile </a>
-						</li>
+						
 						<li>
 							<a href="logout">
 							<i class="glyphicon glyphicon-user"></i>

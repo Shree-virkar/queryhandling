@@ -13,6 +13,7 @@ import com.cdac.model.Faculty;
 import com.cdac.model.Login;
 import com.cdac.model.NonTechQuery;
 import com.cdac.model.Student;
+import com.cdac.model.TechQuery;
 import com.cdac.service.AdminService;
 
 @Controller
@@ -32,7 +33,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="/registerFaculty1", method = RequestMethod.POST)
-	public String registerFaculty(@RequestParam("username") String username, @RequestParam("password") String password,  @RequestParam("email") String email,@RequestParam("contactno") int contactno,@RequestParam("firstname") String firstname,@RequestParam("lastname") String lastname)
+	public String registerFaculty(@RequestParam("username") String username, @RequestParam("password") String password,  @RequestParam("email") String email,@RequestParam("contactno") String contactno,@RequestParam("firstname") String firstname,@RequestParam("lastname") String lastname)
 	{
 	
 		
@@ -43,6 +44,9 @@ public class AdminController {
 		log.setEmailId(email);
 		log.setContactNo(contactno);
 		log.setUserRole("faculty");
+		
+		TechQuery sub=new TechQuery();
+	//	sub.setSubject(subject);
 		
 		
 		System.out.println(log.toString());
@@ -55,7 +59,7 @@ public class AdminController {
 		System.out.println(fc.toString());
 		
 		System.out.println("In Admin Controller");
-		if(service.registerFaculty(log, fc))
+		if(service.registerFaculty(log, fc,sub))
 		{
 			return "admin";
 		}

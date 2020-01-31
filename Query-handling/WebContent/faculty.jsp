@@ -125,7 +125,7 @@ body {
 
 <body style = "background-color: #8585ad">
 	
-<div class="container" style = "background-color: #ffe6e6;">
+<div class="container" style = "background-color: #ffffb3;">
     <div class="row profile">
 		<div class="col-md-3">
 			<div class="profile-sidebar">
@@ -137,7 +137,7 @@ body {
 				<!-- SIDEBAR USER TITLE -->
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
-						Faculty name
+						Welcome <%= session.getAttribute("username") %>
 					</div>
 					<div class="profile-usertitle-job">
 						PG-DAC
@@ -150,11 +150,7 @@ body {
 				<!-- SIDEBAR MENU -->
 				<div class="profile-usermenu">
 					<ul class="nav">
-						<li class="active">
-							<a href="#">
-							<i class="glyphicon glyphicon-home"></i>
-							Update Profile </a>
-						</li>
+						
 						<li>
 							<a href="logout">
 							<i class="glyphicon glyphicon-user"></i>
@@ -173,7 +169,7 @@ body {
 			   <table align="center" border="1" width = "70%">
 				<tr height = "100" style="text-align: center;">
 				  <td><a href="techans.jsp">Answer Technical query</td>
-				  <td><a href="techanslist.jsp">List Technical query</td>
+				  
 				  
 				</tr>
 				  

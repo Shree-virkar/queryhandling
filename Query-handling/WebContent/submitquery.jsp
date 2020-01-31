@@ -148,7 +148,7 @@
 				<!-- SIDEBAR USER TITLE -->
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
-						Student Name
+							Welcome <%= session.getAttribute("username") %>
 					</div>
 					<div class="profile-usertitle-job">
 						PG-DAC

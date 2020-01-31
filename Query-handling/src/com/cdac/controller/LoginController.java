@@ -41,6 +41,12 @@ public class LoginController{
 		log.setPassWord(passWord);
 		//log.setUserRole(userRole);
 		
+		String student="student";
+		String admin="admin";
+		String faculty="faculty";
+
+
+		
 		Login log1= loginService.userLogin(log);	
 		
 		try {
@@ -49,21 +55,26 @@ public class LoginController{
 			log2=loginService.getUserId(userName, passWord);
 			int userId=log2.getUserId();
 			System.out.println(userId+"SESSION");
+			
 			  
 		if(log1.getUserRole().equalsIgnoreCase("student"))
 		{
+			
 			mv.setViewName("home");
 			session.setAttribute("userId", userId);
 			session.setAttribute("username", userName);
+			session.setAttribute("userRole", student);
 			
 			//addUserInSession(log1, session);
 		}
 		
 		else if(log1.getUserRole().equalsIgnoreCase("admin"))
 		{
+			
 			mv.setViewName("admin");
 			session.setAttribute("userId", userId);
 			session.setAttribute("username", userName);
+			session.setAttribute("userRole", admin);
 			//addUserInSession(log1, session);
 			
 		}else if(log1.getUserRole().equalsIgnoreCase("faculty"))
@@ -72,8 +83,10 @@ public class LoginController{
 			mv.setViewName("faculty");
 			session.setAttribute("userId", userId);
 			session.setAttribute("username", userName);
+			session.setAttribute("userRole", faculty);
 			//addUserInSession(log1, session);
 			System.out.println(session);
+			
 			
 		}else
 		{
@@ -86,17 +99,13 @@ public class LoginController{
 		return mv;
 	}
 	
-	private void addUserInSession(Login l, HttpSession session)
-	{
-		session.setAttribute("userName", l.getUserName());
-		session.setAttribute("passWord", l.getPassWord());
-		session.setAttribute("userRole", l.getUserRole());
-	}
-	
 	
 	@RequestMapping("/logout")
 	public String logout(HttpSession session)
 	{
+		session.removeAttribute("userId");
+		session.removeAttribute("userName");
+		session.removeAttribute("userRole");
 		session.invalidate();
 		return "login";
 	}

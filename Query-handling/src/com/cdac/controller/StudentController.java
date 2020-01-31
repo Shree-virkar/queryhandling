@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cdac.model.Login;
@@ -38,11 +39,12 @@ public class StudentController {
 	}
 
 	@RequestMapping(value="/registerStudent", method = RequestMethod.POST)
-	public String registerStudentC(@RequestParam("username") String username, @RequestParam("password") String password,  @RequestParam("email") String email,@RequestParam("contactno") int contactno,@RequestParam("firstname") String firstname,@RequestParam("lastname") String lastname,HttpSession session)
+	public String registerStudentC(@RequestParam("username") String username, @RequestParam("password") String password,  @RequestParam("email") String email,@RequestParam("contactno") String contactno,@RequestParam("firstname") String firstname,@RequestParam("lastname") String lastname,HttpSession session)
 	{
-	
-		int userId=(int) session.getAttribute("userId");
-		if(userId!=0) {
+		
+		System.out.println(contactno+"contact");
+
+			
 		Login log=new Login();
 		log.setUserName(username);
 		log.setPassWord(password);
@@ -61,21 +63,29 @@ public class StudentController {
 		System.out.println(std.toString());
 		
 		System.out.println("In Admin Controller");
+		
 		if(studentService.registerStudent(log, std))
 		{
 			return "/login";
 		}
 		
 		return "/errorPage";
-		}else {
-			
-			return "/errorPage";
-		}
+		
 	} 
 	
 	
 	
-	
+	@RequestMapping(value="/check_username", method = RequestMethod.GET)
+	@ResponseBody
+	public String isUsername(@RequestParam String username)
+	{
+		System.out.println(username);
+		if(studentService.isUsername(username))
+			return "Already exist";
+		else
+			return "Username Available";
+	}
+
 
 
 	@RequestMapping (value = "/submitquery1", method = RequestMethod.POST)
@@ -92,7 +102,7 @@ public class StudentController {
 		
 		if(studentService.insert(que,userId))
 		{
-			return "submitquery";
+			return "technical";
 		}
 		else
 		{

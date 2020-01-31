@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.cdac.model.Faculty;
 import com.cdac.model.Login;
 import com.cdac.model.NonTechQuery;
+import com.cdac.model.TechQuery;
 
 public interface AdminService {
 
@@ -15,7 +16,7 @@ public interface AdminService {
 	
 	boolean updateStatus(int id);
 	
-	boolean registerFaculty(Login log, Faculty fc );
+	boolean registerFaculty(Login log, Faculty fc,TechQuery sub );
 
 
 	ArrayList<NonTechQuery> getQueries2();

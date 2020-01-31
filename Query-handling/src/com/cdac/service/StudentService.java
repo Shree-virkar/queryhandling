@@ -26,6 +26,6 @@ public interface StudentService {
 
 	public List<TechQuery> selectSubAns(TechQuery techQuery);
 	
-	
+	public boolean isUsername(String username);
 
 }

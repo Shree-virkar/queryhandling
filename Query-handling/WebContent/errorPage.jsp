@@ -10,8 +10,8 @@
 </head>
 <body align="center" class="jumbotron">
 <h1>Page Not Found....</h1>
-<form action="login
-" method="get">
+<form action="login.jsp"
+method="get">
 <div><input type="submit" value="HOME"></div>
 </form>
 </body>

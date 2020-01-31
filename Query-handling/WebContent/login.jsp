@@ -1,6 +1,10 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
     <head>
         <title>Login FORM</title>
+      
+        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
        
         <style>
@@ -61,7 +65,7 @@
               <div style="font-style: normal ; color: whitesmoke ; justify-content: center; text-align: center; ">
                
             
-                <h2>Login Page</h2>
+                <h1 style="color:red "><b>CDAC Students Query Handling System</h1>
              
               
               </div>
@@ -73,7 +77,7 @@
 
                                       <label for="exampleInputUsername1">Username</label>
                                       <input type="text" class="form-control" id="Username" aria-describedby="nameHelp" placeholder="Enter username" name="userName">
-                                      <small id="nameHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
+                                      <small id="nameHelp" class="form-text text-muted"></small>
                                     </div>
 
                                     <div class="form-group">
@@ -84,8 +88,9 @@
 
                                     <button type="submit" class="btn btn-primary btn-block">Login</button>
                                     <div>
-                                      <a href="registration.jsp">Click here to register.</a>
+                                      <a href="registration.jsp">For student Click here to register .</a>
                                     </div>
+                                    
 
                            </form>
                     </section>

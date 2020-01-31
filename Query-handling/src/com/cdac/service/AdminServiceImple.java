@@ -9,6 +9,7 @@ import com.cdac.dao.AdminDao;
 import com.cdac.model.Faculty;
 import com.cdac.model.Login;
 import com.cdac.model.NonTechQuery;
+import com.cdac.model.TechQuery;
 
 @Service
 public class AdminServiceImple implements AdminService{
@@ -16,9 +17,6 @@ public class AdminServiceImple implements AdminService{
 	@Autowired
 	AdminDao adminDao;
 	
-	
-	
-
 	
 	@Override
 	public ArrayList<NonTechQuery> getQueries() {
@@ -56,9 +54,9 @@ public class AdminServiceImple implements AdminService{
 
 
 	@Override
-	public boolean registerFaculty(Login log, Faculty fc) {
+	public boolean registerFaculty(Login log, Faculty fc,TechQuery sub) {
 		// TODO Auto-generated method stub
-		return adminDao.registerFaculty(log, fc);
+		return adminDao.registerFaculty(log, fc,sub);
 	}
 
 	

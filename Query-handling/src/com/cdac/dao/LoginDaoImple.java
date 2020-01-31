@@ -24,7 +24,8 @@ public class LoginDaoImple implements LoginDao{
 	public Login userLogin(Login user) {
 		
 		
-		String sql = "select * from users where userName = ? and password = ?";
+		String sql = "select * from users where userName = ? and aes_decrypt(password,'mypassword') = ?";
+		
 		try {
 		Login log1 = jdbcTemplate.queryForObject(sql, new Object[] {user.getUserName(),  user.getPassWord()} ,new RowMapper<Login>() {
 			
@@ -60,14 +61,13 @@ public class LoginDaoImple implements LoginDao{
 	@Override
 	public Login getUserId(String userName, String password) {
 		
-		String sql="select user_id from users where userName=? and password=?";
+		String sql="select user_id from users where userName=? and aes_decrypt(password,'mypassword')=?";
 		
 		
 			Login log1 = jdbcTemplate.queryForObject(sql, new Object[] {userName,password} ,new RowMapper<Login>() {
 				
 				@Override
 				public Login mapRow(ResultSet rs, int rowNum) throws SQLException {
-					//System.out.println(user.getUserRole().toString());
 					
 					Login log = new Login();
 					log.setUserId(rs.getInt("user_id"));					

@@ -9,10 +9,12 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cdac.model.Faculty;
 import com.cdac.model.Login;
 import com.cdac.model.NonTechQuery;
+import com.cdac.model.TechQuery;
 
 @Repository
 public class AdminDaoImple implements AdminDao{
@@ -78,18 +80,16 @@ public class AdminDaoImple implements AdminDao{
 	}
 
 
-
-
-
 	@Override
-	public boolean registerFaculty(Login log, Faculty fc) {
+//	@Transactional
+	public boolean registerFaculty(Login log, Faculty fc,TechQuery sub) {
 		
-		String sql="insert into users(userName,password,contact,email,userRole) values(?,?,?,?,?)";
+		String sql="insert into users(userName,password,contact,email,userRole) values(?,aes_encrypt(?, 'mypassword'),?,?,?)";
 		
 		int i=jdbcTemplate.update(sql,new Object[] {log.getUserName(),log.getPassWord(),log.getContactNo(),log.getEmailId(),log.getUserRole()});
 		
 		
-		String sql2="select user_id from users where userName=? and password=?";
+		String sql2="select user_id from users where userName=? and aes_decrypt(password,'mypassword')=?";
 		
 		Login log1 = jdbcTemplate.queryForObject(sql2, new Object[] {log.getUserName(),  log.getPassWord()} ,new RowMapper<Login>() {
 			
@@ -110,10 +110,15 @@ public class AdminDaoImple implements AdminDao{
 
 	
 	
+	
+
+	
+
 	String sql1="insert into faculty(faculty_id,userName,first_name,last_name) values(?,?,?,?)";
 	
 	int j=jdbcTemplate.update(sql1,new Object[] {log1.getUserId(),log.getUserName(),fc.getFirstName(),fc.getLastName()});
-
+	
+	
 	if(i==1 && j==1) {
 		return true;
 	}else {

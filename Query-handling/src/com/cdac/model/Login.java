@@ -7,9 +7,15 @@ public class Login {
 	private String passWord;
 	private String userRole;
 	private String emailId;
-	private int contactNo;
+	private String contactNo;
 	
 	
+	public String getContactNo() {
+		return contactNo;
+	}
+	public void setContactNo(String contactNo) {
+		this.contactNo = contactNo;
+	}
 	public Login() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -44,12 +50,7 @@ public String toString() {
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-	public int getContactNo() {
-		return contactNo;
-	}
-	public void setContactNo(int contactNo) {
-		this.contactNo = contactNo;
-	}
+
 	public int getUserId() {
 		return userId;
 	}
