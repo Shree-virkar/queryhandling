@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -37,6 +38,14 @@ public class StudentController {
 	public void setQueryService(StudentService queryService) {
 		this.studentService = queryService;
 	}
+	
+	@GetMapping
+	public String disLogin()
+	{
+		return "home";
+	}
+	
+	
 
 	@RequestMapping(value="/registerStudent", method = RequestMethod.POST)
 	public String registerStudentC(@RequestParam("username") String username, @RequestParam("password") String password,  @RequestParam("email") String email,@RequestParam("contactno") String contactno,@RequestParam("firstname") String firstname,@RequestParam("lastname") String lastname,HttpSession session)

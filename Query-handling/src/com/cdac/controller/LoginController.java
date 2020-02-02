@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,8 +29,11 @@ public class LoginController{
 		this.loginService = loginService;
 	}
 
-	
-	
+	@GetMapping
+	public String disLogin()
+	{
+		return "login";
+	}
 	
 
 	@RequestMapping(value = "/student", method = RequestMethod.POST)
@@ -64,6 +68,7 @@ public class LoginController{
 			session.setAttribute("userId", userId);
 			session.setAttribute("username", userName);
 			session.setAttribute("userRole", student);
+			session.setAttribute("roleId", 11);
 			
 			//addUserInSession(log1, session);
 		}
@@ -75,6 +80,7 @@ public class LoginController{
 			session.setAttribute("userId", userId);
 			session.setAttribute("username", userName);
 			session.setAttribute("userRole", admin);
+			session.setAttribute("roleId", 22);
 			//addUserInSession(log1, session);
 			
 		}else if(log1.getUserRole().equalsIgnoreCase("faculty"))
@@ -84,6 +90,7 @@ public class LoginController{
 			session.setAttribute("userId", userId);
 			session.setAttribute("username", userName);
 			session.setAttribute("userRole", faculty);
+			session.setAttribute("roleId", 33);
 			//addUserInSession(log1, session);
 			System.out.println(session);
 			
@@ -106,6 +113,7 @@ public class LoginController{
 		session.removeAttribute("userId");
 		session.removeAttribute("userName");
 		session.removeAttribute("userRole");
+		session.removeAttribute("roleId");
 		session.invalidate();
 		return "login";
 	}

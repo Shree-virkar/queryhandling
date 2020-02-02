@@ -136,7 +136,7 @@ body {
     </head>
 
 <body style = "background-color: #8585ad">
-<c:if test="${sessionScope.username eq null}">
+<c:if test="${sessionScope.username == null}">
 	<%-- user is not available --%>
 	<c:redirect url="login.jsp"></c:redirect>
 </c:if>
@@ -215,4 +215,5 @@ body {
 <br>
 </c:if>
 </body>
+
 </html>

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,6 +31,13 @@ public class FacultyController {
     public void setFacultyService(FacultyService facultyService) {
 		this.facultyService = facultyService;
 	}
+    
+    @GetMapping
+	public String disLogin()
+	{
+		return "faculty";
+	}
+    
 	
 	@RequestMapping (value = "/anstech", method = RequestMethod.POST)
 
